@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 function Logo() {
   return (
     <h1>
@@ -7,6 +9,7 @@ function Logo() {
 }
 
 const Header = () => {
+  const [isLogged, setIsLogged] = useState(false);
   return (
     <div className="header">
       <Logo />
@@ -22,11 +25,17 @@ const Header = () => {
             <a href="#">Contact</a>
           </li>
           <li>
-            <a href="#">Cart</a>
+            <a href="#">Cart...</a>
           </li>
         </ul>
       </nav>
-
+      <div>
+        {isLogged ? (
+          <button onClick={() => setIsLogged(false)}>Log Out</button>
+        ) : (
+          <button onClick={() => setIsLogged(true)}>Login</button>
+        )}
+      </div>
     </div>
   );
 };
