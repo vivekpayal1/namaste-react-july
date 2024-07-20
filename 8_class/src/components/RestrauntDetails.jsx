@@ -5,6 +5,7 @@ import { IMG_CDN_URL } from "../utils/constant";
 const RestrauntDetails = () => {
   const [getMenus, setMenus] = useState([]);
   const [recommendedItems, setRecommendedItems] = useState([]);
+  console.log(getMenus,recommendedItems)
   const params = useParams();
   const { id } = params;
 
